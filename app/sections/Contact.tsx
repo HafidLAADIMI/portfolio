@@ -3,7 +3,7 @@ import { FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-const Lottie = dynamic(() => import("Lottie-react"), { ssr: false });
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import email from "../../public/assets/email.json";
 interface PropsItem {
   target: {

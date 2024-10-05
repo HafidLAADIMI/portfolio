@@ -5,7 +5,7 @@ import web from "../../public/assets/web.json";
 import phone from "../../public/assets/phone.json";
 import dynamic from "next/dynamic";
 import { useMediaQuery } from "react-responsive";
-const Lottie = dynamic(() => import("Lottie-react"), { ssr: false });
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 const Service = () => {
   const small=useMediaQuery({maxWidth:600})
   const mobile=useMediaQuery({maxWidth:768,minWidth:601})
