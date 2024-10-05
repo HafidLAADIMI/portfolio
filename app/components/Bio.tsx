@@ -121,7 +121,7 @@ const Bio = () => {
           className="flex flex-col items-center h-full  gap-3 col-span-1  text-slate-100   p-2 rounded-lg my-6 z-20 text-wrap  bg-[#520075]   "
         >
           <Image
-            src="/assets/billGates.jfif"
+            src="/assets/billGates.png"
             height={500}
             width={500}
             alt="techs"

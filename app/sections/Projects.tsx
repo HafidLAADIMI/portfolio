@@ -133,7 +133,7 @@ const Projects = () => {
             className=" flex flex-col items-center h-full  gap-3 col-span-1  text-slate-100   p-2 rounded-lg my-6 z-50 text-wrap backdrop-blur-xl bg-[#520075] "
           >
             <Image
-              src={"/projects/facebook.jfif"}
+              src={"/assets/facebook.png"}
               height={500}
               width={500}
               alt="techs"
@@ -220,7 +220,7 @@ const Projects = () => {
             className=" flex flex-col items-center h-full  gap-3 col-span-1  text-slate-100   p-2 rounded-lg my-6 z-50 text-wrap backdrop-blur-xl bg-[#520075] "
           >
             <Image
-              src={"/projects/e-commerce.jfif"}
+              src={"/assets/e-commerce.png"}
               height={500}
               width={500}
               alt="techs"
@@ -300,7 +300,7 @@ const Projects = () => {
             className=" flex flex-col items-center h-full  gap-3 col-span-1  text-slate-100   p-2 rounded-lg my-6 z-50 text-wrap backdrop-blur-xl bg-[#520075] "
           >
             <Image
-              src={"/projects/platform.jfif"}
+              src={"/assets/platform.png"}
               height={500}
               width={500}
               alt="techs"
