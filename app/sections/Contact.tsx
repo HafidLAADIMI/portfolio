@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("Lottie-react"), { ssr: false });
 import email from "../../public/assets/email.json";
-import { s } from "framer-motion/client";
 interface PropsItem {
   target: {
     name: string;
@@ -64,14 +63,14 @@ const Contact = () => {
             setLoading(false);
           },
           (error) => {
-            
-            setError("Something went wrong, please try again");
+            if(error)
+            setError("Something went wrong, please try again ");
             setLoading(false);
           }
         );
     } catch (error) { 
       setError("Something went wrong, please try again");
-      throw new Error("Error Occured");
+      throw  Error("Error Occured"+error);
     }
   
   };

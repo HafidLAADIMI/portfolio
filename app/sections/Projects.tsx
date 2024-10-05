@@ -146,7 +146,7 @@ const Projects = () => {
               <p className=" text-slate-300">
                 A Facebook Clone using Next.js for the frontend and Spring Boot
                 for the backend, featuring JWT authentication and a MySQL
-                database. It replicates Facebook's core features with full CRUD
+                database. It replicates Facebook&apos;s core features with full CRUD
                 operations.
               </p>
               <div className="flex flex-row gap-5 w-full items-center justify-center ">
