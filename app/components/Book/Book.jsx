@@ -1,7 +1,6 @@
-
 import { useCursor, useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import {useAtom}from "jotai";
+import { useAtom } from "jotai";
 import { easing } from "maath";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -89,7 +88,7 @@ const pageMaterials = [
 pages.forEach((page) => {
   useTexture.preload(`${page.front}`);
   useTexture.preload(`${page.back}`);
-  useTexture.preload(`${page.back}`);
+  useTexture.preload(`assets/me.png`);
 });
 
 const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
@@ -97,7 +96,7 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
     `${front}`,
     `${back}`,
     ...(number === 0 || number === pages.length - 1
-      ? [`${back}`]
+      ? [`assets/me.png`]
       : []),
   ]);
   picture.colorSpace = picture2.colorSpace = SRGBColorSpace;
@@ -163,7 +162,8 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
 
   // useHelper(skinnedMeshRef, SkeletonHelper, "red");
 
-  useFrame(( delta) => {
+  // useFrame(( delta) => {
+  useFrame((_, delta) => {
     if (!skinnedMeshRef.current) {
       return;
     }
@@ -232,7 +232,7 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
     }
   });
 
-  const [setPage] = useAtom(pageAtom);
+  const [,setPage] = useAtom(pageAtom);
   const [highlighted, setHighlighted] = useState(false);
   useCursor(highlighted);
 

@@ -11,7 +11,7 @@ const Service = () => {
   const mobile=useMediaQuery({maxWidth:768,minWidth:601})
   const tablet=useMediaQuery({minWidth:769,maxWidth:1024})
   return (
-    <section className="min-h-screen mt-14 md:mt-4 px-6 sm:px-16">
+    <section className="min-h-screen mt-14 md:mt-4 px-6 sm:px-16" id="services">
       <div className="absolute     max-w-7xl mx-auto  flex flex-row items-start gap-5">
         <div className="flex flex-col justify-center items-center mt-5">
           <motion.div

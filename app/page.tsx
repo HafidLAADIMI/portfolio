@@ -20,7 +20,7 @@ export default function Home() {
       }}
       className="h-full w-full text-white "
     >
-      <div className="flex flex-col  w-full h-screen overflow-hidden gap-8">
+      <div id="home" className="flex flex-col  w-full h-screen overflow-hidden gap-8">
         <Navbar />
         <HeroSection />
       </div>

@@ -16,6 +16,12 @@ const NavbarItems = () => {
       <Link href="#projects">
         <li>Projects</li>
       </Link>
+      <Link href="#services">
+        <li>Services</li>
+      </Link>
+      <Link href="#skills">
+        <li>Skills</li>
+      </Link>
       <Link href="#contact">
         <li>Contact</li>
       </Link>

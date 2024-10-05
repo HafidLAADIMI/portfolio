@@ -4,13 +4,13 @@ import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
-import {useMediaQuery} from "react-responsive"
+import { useMediaQuery } from "react-responsive";
 const Projects = () => {
-  const small=useMediaQuery({maxWidth:600})
-  const mobile=useMediaQuery({maxWidth:768,minWidth:601})
-  const tablet=useMediaQuery({minWidth:769,maxWidth:1024})
+  const small = useMediaQuery({ maxWidth: 600 });
+  const mobile = useMediaQuery({ maxWidth: 768, minWidth: 601 });
+  const tablet = useMediaQuery({ minWidth: 769, maxWidth: 1024 });
   return (
-    <section className=" mt-20 w-full sm:px-16 px-6 relative" id="#projects">
+    <section className=" mt-20 w-full sm:px-16 px-6 relative" id="projects">
       <div className="absolute     max-w-7xl mx-auto  flex flex-row items-start gap-5">
         <div className="flex flex-col justify-center items-center mt-5">
           <motion.div
@@ -28,7 +28,9 @@ const Projects = () => {
               height: "0vh",
             }}
             whileInView={{
-              height: `${small?"343vh":mobile?"343vh":tablet?"240vh":"150vh"}`,
+              height: `${
+                small ? "343vh" : mobile ? "343vh" : tablet ? "240vh" : "150vh"
+              }`,
             }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="w-1 h-screen violet-gradient"
@@ -64,14 +66,15 @@ const Projects = () => {
               alt="techs"
               className="object-contain rounded-lg cursor-pointer h-[200px] w-[200px]"
             />
+
             <div className="flex flex-col justify-center items-start gap-4">
               <h3 className="text-3xl  text-white font-anton font-pmedium z-30">
                 Aora Mobile App
               </h3>
               <p className=" text-slate-300 ">
-                This is a project built with react native for the cross platform
-                the major idea is to build a platform that can be used on both
-                android and ios{" "}
+                A cross-platform mobile application built with React Native,
+                designed for both Android and iOS, utilizing Appwrite for user
+                authentication and data management.
               </p>
               <div className="flex flex-row gap-5 w-full items-center justify-center ">
                 <Image
@@ -98,13 +101,13 @@ const Projects = () => {
               </div>
               <div className="flex flex-row items-center justify-center gap-3">
                 <Link
-                  href="https://github.com/hafidhafid"
+                  href="https://github.com/HafidLAADIMI/Aora"
                   className="text-3xl text-start text-white font-anton font-medium"
                 >
                   <FaGithub />
                 </Link>
                 <Link
-                  href="https://linkedin.com/hafidhafid"
+                  href="https://www.linkedin.com/posts/hafid-laadimi-814b27258_reactnative-fullstackdevelopment-expo-activity-7239415024153219074-gPFQ?utm_source=share&utm_medium=member_desktop"
                   className="text-3xl text-start text-[#0e84e5] font-anton font-medium"
                 >
                   <FaLinkedin />
@@ -141,9 +144,10 @@ const Projects = () => {
                 Facebook clone
               </h3>
               <p className=" text-slate-300">
-                This is a project built with react native for the cross platform
-                the major idea is to build a platform that can be used on both
-                android and ios{" "}
+                A Facebook Clone using Next.js for the frontend and Spring Boot
+                for the backend, featuring JWT authentication and a MySQL
+                database. It replicates Facebook's core features with full CRUD
+                operations.
               </p>
               <div className="flex flex-row gap-5 w-full items-center justify-center ">
                 <Image
@@ -184,13 +188,13 @@ const Projects = () => {
               </div>
               <div className="flex flex-row items-center justify-center gap-3">
                 <Link
-                  href="https://github.com/hafidhafid"
+                  href="https://github.com/HafidLAADIMI/facebook-backend"
                   className="text-3xl text-start text-white font-anton font-medium"
                 >
                   <FaGithub />
                 </Link>
                 <Link
-                  href="https://linkedin.com/hafidhafid"
+                  href="https://www.linkedin.com/posts/hafid-laadimi-814b27258_excited-to-share-my-latest-project-a-facebook-activity-7229625181709750272-LBMz?utm_source=share&utm_medium=member_desktop"
                   className="text-3xl text-start text-[#0e84e5] font-anton font-medium"
                 >
                   <FaLinkedin />
@@ -227,9 +231,10 @@ const Projects = () => {
                 E-commerce website
               </h3>
               <p className=" text-slate-300">
-                This is a project built with react native for the cross platform
-                the major idea is to build a platform that can be used on both
-                android and ios{" "}
+                Built a responsive web application in three days with Next.js
+                14, Tailwind CSS, and TypeScript, featuring user authentication
+                and smooth animations, all deployed on Vercel for optimal
+                performance.
               </p>
               <div className="flex flex-row gap-5 w-full items-center justify-center ">
                 <Image
@@ -263,13 +268,13 @@ const Projects = () => {
               </div>
               <div className="flex flex-row items-center justify-center gap-3">
                 <Link
-                  href="https://github.com/hafidhafid"
+                  href="https://github.com/HafidLAADIMI/e-commerce"
                   className="text-3xl text-start text-white font-anton font-medium"
                 >
                   <FaGithub />
                 </Link>
                 <Link
-                  href="https://linkedin.com/hafidhafid"
+                  href="https://www.linkedin.com/posts/hafid-laadimi-814b27258_nextjs-nextjs14-vercel-activity-7213596571383271425-sy0P?utm_source=share&utm_medium=member_desktop"
                   className="text-3xl text-start text-[#0e84e5] font-anton font-medium"
                 >
                   <FaLinkedin />
@@ -306,9 +311,10 @@ const Projects = () => {
                 Entertainment Platform
               </h3>
               <p className=" text-slate-300">
-                This is a project built with react native for the cross platform
-                the major idea is to build a platform that can be used on both
-                android and ios{" "}
+                Entertainment platform built with Next.js and MongoDB
+                aggregation, featuring Tailwind CSS and Auth.js. Users can add
+                and manage their own anime movie lists, creating a personalized
+                viewing experience.
               </p>
               <div className="flex flex-row gap-5 w-full items-center justify-center ">
                 <Image
@@ -342,16 +348,10 @@ const Projects = () => {
               </div>
               <div className="flex flex-row items-center justify-center gap-3">
                 <Link
-                  href="https://github.com/hafidhafid"
+                  href="https://github.com/HafidLAADIMI/Hafid_Platform"
                   className="text-3xl text-start text-white font-anton font-medium"
                 >
                   <FaGithub />
-                </Link>
-                <Link
-                  href="https://linkedin.com/hafidhafid"
-                  className="text-3xl text-start text-[#0e84e5] font-anton font-medium"
-                >
-                  <FaLinkedin />
                 </Link>
               </div>
             </div>
@@ -384,9 +384,9 @@ const Projects = () => {
                 3D Portfolio
               </h3>
               <p className="text-slate-300">
-                This is a project built with react native for the cross platform
-                the major idea is to build a platform that can be used on both
-                android and ios{" "}
+                3D Portfolio: An engaging platform built with Next.js, Three.js,
+                and Tailwind CSS, showcasing smooth 3D models for a captivating
+                visual experience.
               </p>
               <div className="flex flex-row gap-5 w-full items-center justify-center ">
                 <Image
@@ -406,7 +406,7 @@ const Projects = () => {
               </div>
               <div className="flex flex-row items-center justify-center gap-3">
                 <Link
-                  href="https://github.com/hafidhafid"
+                  href="https://github.com/HafidLAADIMI/three-js"
                   className="text-3xl text-start text-white font-anton font-medium"
                 >
                   <FaGithub />

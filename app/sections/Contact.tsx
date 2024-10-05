@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("Lottie-react"), { ssr: false });
 import email from "../../public/assets/email.json";
+import { s } from "framer-motion/client";
 interface PropsItem {
   target: {
     name: string;
@@ -14,12 +15,30 @@ interface PropsItem {
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
   const handleChange = ({ target: { name, value } }: PropsItem) => {
     setForm({ ...form, [name]: value });
   };
 
   const handleSubmit = async (e: FormEvent) => {
+
     e.preventDefault();
+    setError("");
+    setMessage("");
+    if (!form.name || !form.email || !form.message) {
+      setError("Please fill in all fields");
+      return;
+    }
+    const isValidEmail = (email: string) => {
+      const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+      return emailRegex.test(email);
+    };
+    if(!isValidEmail(form.email)){
+      setError("Please enter a valid email address");
+      return;
+    }
+    
     setLoading(true);
     try {
       await emailjs
@@ -39,26 +58,25 @@ const Contact = () => {
 
         .then(
           () => {
-            console.log("SUCCESS!");
-            alert(
-              "Thank you for your message. I will get back to you as soon as possible."
-            );
+           
+            setMessage("Message sent successfully");
             setForm({ name: "", email: "", message: "" });
             setLoading(false);
           },
           (error) => {
-            console.log("FAILED...", error);
-            alert("I did not received your message");
+            
+            setError("Something went wrong, please try again");
             setLoading(false);
           }
         );
     } catch (error) { 
-      console.log(error);
+      setError("Something went wrong, please try again");
       throw new Error("Error Occured");
     }
+  
   };
   return (
-    <section className="relative mt-10 h-full px-6 sm:px-16 overflow-hidden ">
+    <section className="relative mt-10 h-full px-6 sm:px-16 overflow-hidden " id="contact">
       <div className="absolute     max-w-7xl mx-auto  flex flex-row items-start gap-5">
         <div className="flex flex-col justify-center items-center mt-5">
           <motion.div
@@ -98,6 +116,8 @@ const Contact = () => {
   
         </motion.div>
         <form className="mt-12 flex w-full md:max-w-[45vw] flex-col space-y-7 p-4 bg-[#8a00c4]/30 backdrop-blur-sm rounded-lg">
+        {error && <p className="text-red-600">{error}</p>}
+        {message && <p className="text-green-600">{message}</p>}
           <label className="space-y-2">
             <span className="text-white text-xl ">Full name</span>
             <input
@@ -105,6 +125,7 @@ const Contact = () => {
               name="name"
               value={form.name}
               required
+              type="text"
               placeholder="ex. , Hafid LAADIMI"
               onChange={handleChange}
             />
@@ -114,6 +135,7 @@ const Contact = () => {
             <input
               className="h-10 w-full bg-[#8a00c4] rounded-lg text-[#1AF2FF] px-3  outline-none"
               name="email"
+              type="email"
               value={form.email}
               required
               placeholder="ex. , contact@example.com"

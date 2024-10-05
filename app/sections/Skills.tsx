@@ -10,7 +10,7 @@ const Skills = () => {
   return (
     <section
       className="mt-10 relative px-6 sm:px-16 h-screen w-full"
-      id="#skills"
+      id="skills"
     >
       <div className="absolute  max-w-7xl mx-auto  flex flex-row items-start gap-5">
         <div className="flex flex-col justify-center items-center mt-5">
@@ -40,15 +40,6 @@ const Skills = () => {
         Skills
       </p>
       <div className="relative flex items-center justify-center mx-4 p-4 mt-8">
-        {/* <div
-          style={{
-            // background: "#520075",
-            // background: "#2E0041",
-            filter: "blur(5px)",
-          }}
-            
-          className="absolute inset-0 z-10  bg-[#520075]/50 backdrop-blur-sm"
-        /> */}
         <div className="w-full  backdrop-blur-sm bg-[#8a00c4]/30  rounded-xl  z-30">
           <Canvas
             style={{

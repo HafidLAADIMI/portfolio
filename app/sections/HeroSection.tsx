@@ -4,7 +4,7 @@ import DevComputer from "../components/DevComputer";
 
 const HeroSection = () => {
   return (
-    <section className="w-full min-h-screen mt-5 sm:px-16 px-6   ">
+    <section className="w-full min-h-screen mt-5 sm:px-16 px-6 " id="home">
       <div className="flex flex-col gap-3 relative ">
         <div className="absolute     max-w-7xl mx-auto  flex flex-row items-start gap-5">
           <div className="flex flex-col justify-center items-center mt-5">
