@@ -2,27 +2,25 @@
 
 import Link from "next/link";
 import { useState } from "react";
-const NavbarItems = () => {
+const NavbarItems = ({ onClick = () => {} }) => {
   return (
     <ul
       className={`flex flex-col items-start px-8 md:flex-row md:items-center justify-center gap-8 font-poppins relative my-2 transition duration-150 ease-out `}
     >
-      <Link href="#home">
-        <li>Home</li>
-      </Link>
-      <Link href="#about">
+      
+      <Link onClick={onClick} href="#about">
         <li>About</li>
       </Link>
-      <Link href="#projects">
+      <Link onClick={onClick} href="#projects">
         <li>Projects</li>
       </Link>
-      <Link href="#services">
+      <Link onClick={onClick} href="#services">
         <li>Services</li>
       </Link>
-      <Link href="#skills">
+      <Link onClick={onClick} href="#skills">
         <li>Skills</li>
       </Link>
-      <Link href="#contact">
+      <Link onClick={onClick} href="#contact">
         <li>Contact</li>
       </Link>
     </ul>
@@ -31,14 +29,14 @@ const NavbarItems = () => {
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
+  const closeMenu = () => setOpen(false);
   return (
     <nav  className="sm:px-16 px-6">
       <div className="flex  flex-row items-center justify-between w-full mx-auto py-2  relative">
-        <p className=" text-3xl text-center text-gray-300 font-poppins font-semibold cursor-pointer  shadow-[#8a00c4] shadow-inner rounded-md">
+         <Link href="#home"  className=" text-3xl text-center text-gray-300 font-poppins font-semibold cursor-pointer  shadow-[#8a00c4] shadow-inner rounded-md">
           {" "}
           Hafid
-        </p>
+        </Link>
         <div className="flex md:hidden z-10  ">
           <button
             className="gap-1 cursor-pointer"
@@ -67,7 +65,7 @@ const Navbar = () => {
       </div>
       {/* sidebar */}
       <nav className={`absolute overflow-hidden backdrop-blur-sm transition-all ease-in-out duration-150 bg-[#8a00c4]/30 text-white font-semibold right-0 left-0 md:hidden ${open ? "max-h-screen" : "max-h-0"} z-40`}>
-        <NavbarItems  />
+        <NavbarItems onClick={closeMenu} />
       </nav>
     </nav>
   );
