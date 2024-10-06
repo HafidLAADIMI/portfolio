@@ -85,7 +85,7 @@ const Projects = () => {
                   className="object-contain rounded-lg shadow-md shadow-black cursor-pointer w-6 h-6"
                 />
                 <Image
-                  src={"/assets/appwrite.jfif"}
+                  src={"/assets/appwrite.png"}
                   height={50}
                   width={50}
                   alt="techs"

@@ -42,7 +42,7 @@ const Bio = () => {
           />
           <div className="flex flex-col items-start text-xl text-slate-300">
             <span className="text-white font-bold font-anton">
-              Transformation engineering student industrial digital technology :
+            Engineering student in Industrial Digital Transformation :
             </span>
             I am passionate about innovation and optimizing processes. Rigorous,
             self-driven, and curious, I’m always eager to embrace new
